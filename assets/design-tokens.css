@@ -1,0 +1,168 @@
+/* ============================================================================
+   Ant Design System · Token Stylesheet v2.0
+   ----------------------------------------------------------------------------
+   Usage: paste this block at the top of <style> in any report page, or link it
+          as an external stylesheet. All page styles must reference these
+          variables — never emit a raw hex value or bare pixel outside this file.
+   Source: Ant enterprise token set, curated for data-dense web applications.
+   ============================================================================ */
+
+:root {
+  /* ---------- 1. Primary ---------- */
+  --color-primary:        #1677ff;
+  --color-primary-hover:  #4096ff;
+  --color-primary-active: #0958d9;
+  --color-primary-subtle: #E6F1FB;
+
+  /* ---------- 2. Semantic five tiers (bg + text + border, always as a set) ---------- */
+  --state-danger-bg: #FCEBEB;  --state-danger-tx: #A32D2D;  --state-danger-bd: #F09595;
+  --state-warn-bg:   #FAEEDA;  --state-warn-tx:   #854F0B;  --state-warn-bd:   #EF9F27;
+  --state-info-bg:   #E6F1FB;  --state-info-tx:   #185FA5;  --state-info-bd:   #85B7EB;
+  --state-success-bg:#E8F7F1;  --state-success-tx:#0D7A50;  --state-success-bd:#8FD9BB;
+  --state-neutral-bg:#F0F2F5;  --state-neutral-tx:#5D6675;  --state-neutral-bd:#D8DEE9;
+
+  /* ---------- 3. Text ---------- */
+  --text-1: #111827;   /* body, values */
+  --text-2: #5F6368;   /* labels, headers, captions */
+  --text-3: #8C8F94;   /* tertiary, disabled, null symbol */
+  --text-inverse: #FFFFFF;
+
+  /* ---------- 4. Border ---------- */
+  --border-1: #E5E7EB;
+  --border-2: #F0F0F0;
+  --border-control: #D8DEE9;
+
+  /* ---------- 5. Surface ---------- */
+  --bg-page: #F0F2F5;
+  --bg-surface: #FFFFFF;
+  --bg-thead: #FAFAFA;
+  --bg-row-hover: #F7F9FC;
+  --bg-subtle: #F5F7FA;
+
+  /* ---------- 6. Row warning tint (two levels only) ---------- */
+  --row-warn-bg: #FFF8E8;
+  --row-danger-bg: #FFF0F0;
+
+  /* ---------- 7. Chart series (fixed sequence, series N → color N) ---------- */
+  --series-1:  #1677ff;  --series-2:  #16A34A;  --series-3:  #D97706;
+  --series-4:  #DC2626;  --series-5:  #8B5CF6;  --series-6:  #0DA5A5;
+  --series-7:  #D84F9B;  --series-8:  #5F7DDE;  --series-9:  #E66B2E;
+  --series-10: #9164DA;  --series-11: #6A9C21;  --series-12: #2C90C8;
+
+  /* ---------- 8. Fonts ---------- */
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Consolas, monospace;
+
+  /* ---------- 9. Font size — 7 steps, closed set ---------- */
+  --fs-cap:  12px;
+  --fs-sm:   13px;
+  --fs-base: 14px;
+  --fs-h3:   16px;
+  --fs-h1:   20px;
+  --fs-kpi:  24px;
+  --fs-hero: 28px;
+
+  --fw-normal: 400;
+  --fw-medium: 500;
+  --fw-bold:   600;
+  --lh-base: 1.6;
+
+  /* ---------- 10. Spacing — 6 steps, closed set ---------- */
+  --sp-1: 4px;   --sp-2: 8px;   --sp-3: 12px;
+  --sp-4: 16px;  --sp-5: 24px;  --sp-6: 32px;
+
+  /* ---------- 11. Radius — closed set ---------- */
+  --r-xs: 4px;
+  --r-sm: 6px;
+  --r-md: 8px;
+  --r-full: 999px;
+
+  /* ---------- 12. Shadow (cards and overlays only) ---------- */
+  --shadow-card: 0 1px 2px rgba(16,24,40,.04);
+  --shadow-pop:  0 6px 16px rgba(0,0,0,.08);
+  --shadow-tip:  0 7px 24px rgba(0,0,0,.2);
+
+  /* ---------- 13. Sizing ---------- */
+  --h-control: 32px;
+  --h-control-lg: 36px;
+  --h-pagebtn: 28px;
+  --badge-h: 20px;
+  --page-max-wide: 1760px;
+  --page-max-std:  1280px;
+
+  /* ---------- 14. Motion ---------- */
+  --t-fast: 150ms ease;
+}
+
+/* ============================================================================
+   Base utilities — optional, use as needed
+   ============================================================================ */
+
+.rpt-page{max-width:var(--page-max-std);margin:0 auto;padding:var(--sp-5) var(--sp-5) 40px}
+.rpt-page--wide{max-width:var(--page-max-wide)}
+.rpt-stack{display:flex;flex-direction:column;gap:var(--sp-4)}
+
+.rpt-card{background:var(--bg-surface);border:1px solid var(--border-1);
+  border-radius:var(--r-md);box-shadow:var(--shadow-card)}
+
+.rpt-title{font-size:var(--fs-h3);font-weight:var(--fw-bold);margin:0;color:var(--text-1)}
+
+/* numeric typography — required on every numeric column */
+.rpt-num{text-align:right;font-variant-numeric:tabular-nums}
+/* monospace — IDs, codes, batch numbers, timestamps */
+.rpt-mono{font-family:var(--font-mono);font-size:var(--fs-cap)}
+.rpt-null{color:var(--text-3)}
+.rpt-muted{color:var(--text-2)}
+
+/* status badge base + semantic modifiers */
+.rpt-badge{display:inline-flex;align-items:center;height:var(--badge-h);padding:0 10px;
+  border-radius:var(--r-full);font-size:var(--fs-cap);font-weight:var(--fw-medium);
+  line-height:1;white-space:nowrap}
+.rpt-badge--danger {background:var(--state-danger-bg); color:var(--state-danger-tx); border:1px solid var(--state-danger-bd)}
+.rpt-badge--warn   {background:var(--state-warn-bg);   color:var(--state-warn-tx);   border:1px solid var(--state-warn-bd)}
+.rpt-badge--info   {background:var(--state-info-bg);   color:var(--state-info-tx);   border:1px solid var(--state-info-bd)}
+.rpt-badge--success{background:var(--state-success-bg);color:var(--state-success-tx); border:1px solid var(--state-success-bd)}
+.rpt-badge--neutral{background:var(--state-neutral-bg);color:var(--state-neutral-tx); border:1px solid var(--state-neutral-bd)}
+
+/* table — sticky header is mandatory */
+.rpt-table{width:100%;border-collapse:collapse}
+.rpt-table thead th{position:sticky;top:0;z-index:2;background:var(--bg-thead);
+  color:var(--text-2);font-size:var(--fs-cap);font-weight:var(--fw-medium);
+  text-align:left;padding:10px 12px;border-bottom:1px solid var(--border-1);
+  white-space:nowrap}
+.rpt-table tbody td{padding:9px 12px;border-bottom:1px solid var(--border-2);
+  font-size:var(--fs-sm);white-space:nowrap;vertical-align:middle}
+.rpt-table tbody tr:hover td{background:var(--bg-row-hover)}
+.rpt-table tbody tr:last-child td{border-bottom:0}
+.rpt-table tfoot td{padding:10px 12px;font-size:var(--fs-sm);font-weight:var(--fw-bold);
+  background:var(--bg-thead);border-top:1px solid var(--border-1);white-space:nowrap}
+
+/* controls */
+.rpt-control{height:var(--h-control);border:1px solid var(--border-control);
+  border-radius:var(--r-sm);background:var(--bg-surface);color:var(--text-1);
+  font-size:var(--fs-sm);padding:0 10px;outline:none;
+  transition:border-color var(--t-fast),box-shadow var(--t-fast)}
+.rpt-control:hover{border-color:var(--color-primary)}
+.rpt-control:focus{border-color:var(--color-primary);
+  box-shadow:0 0 0 2px rgba(22,119,255,.12)}
+
+/* empty state */
+.rpt-empty{padding:48px 0;text-align:center;color:var(--text-3);font-size:var(--fs-sm)}
+
+/* focus-visible — mandatory, never remove without a replacement */
+:where(button,a,input,select,[tabindex]):focus-visible{
+  outline:2px solid var(--color-primary);outline-offset:2px;border-radius:var(--r-sm)}
+
+/* ============================================================================
+   Responsive — two breakpoints only
+   ============================================================================ */
+@media (max-width:1199px){
+  .rpt-page{padding:var(--sp-4)}
+}
+@media (max-width:767px){
+  .rpt-page{padding:14px}
+  .rpt-stack{gap:var(--sp-3)}
+}
+@media (prefers-reduced-motion: reduce){
+  *{transition:none!important;animation:none!important}
+}
